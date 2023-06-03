@@ -7,7 +7,7 @@ const service = new GeekService();
 
 router.get('/', async (req, res, next) => {
   try {
-    const geeks = await service.find();
+    const geeks = await service.findAll();
     res.json(geeks);
   } catch (error) {
     next(error);
@@ -15,7 +15,9 @@ router.get('/', async (req, res, next) => {
 }
 );
 
-router.get('/:id', validationHandler(getGeekSchema, 'params'), async (req, res, next) => {
+router.get('/:id',
+validationHandler(getGeekSchema, 'params'),
+async (req, res, next) => {
   try {
     const { id } = req.params;
     const geek = await service.findOne(id);
@@ -26,7 +28,9 @@ router.get('/:id', validationHandler(getGeekSchema, 'params'), async (req, res, 
 }
 );
 
-router.post('/', validationHandler(createGeekSchema,'body'), async (req, res, next) => {
+router.post('/',
+ validationHandler(createGeekSchema,'body'),
+ async (req, res, next) => {
   try {
     const body = req.body;
     const created = await service.create(body);
@@ -37,7 +41,10 @@ router.post('/', validationHandler(createGeekSchema,'body'), async (req, res, ne
 }
 );
 
-router.patch('/:id', validationHandler(getGeekSchema, 'params'), validationHandler(updateGeekSchema), async (req, res, next) => {
+router.patch('/:id',
+validationHandler(getGeekSchema, 'params'),
+validationHandler(updateGeekSchema,'body'),
+async (req, res, next) => {
   try {
     const { id } = req.params;
     const body = req.body;
@@ -49,7 +56,9 @@ router.patch('/:id', validationHandler(getGeekSchema, 'params'), validationHandl
 }
 );
 
-router.delete('/:id', validationHandler(deleteGeekSchema, 'params'), async (req, res, next) => {
+router.delete('/:id',
+validationHandler(deleteGeekSchema, 'params'),
+async (req, res, next) => {
 
   try {
     const { id } = req.params;
