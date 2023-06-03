@@ -6,15 +6,14 @@ const description = Joi.string().min(3).max(100);
 const url = Joi.string().uri();
 const price = Joi.number().min(0);
 const quantity = Joi.number().min(1);
-const category = Joi.string();
-
+const categoryId = Joi.string().guid({ version: 'uuidv4' });
 const createGeekSchema = Joi.object({
   name: name.required(),
   description: description.required(),
   url: url.required(),
   price: price.required(),
   quantity: quantity.required(),
-  category: category.required(),
+  categoryId: categoryId.required(),
 });
 
 const updateGeekSchema = Joi.object({
@@ -23,7 +22,7 @@ const updateGeekSchema = Joi.object({
   url,
   price,
   quantity,
-  category,
+  categoryId,
 });
 
 const getGeekSchema = Joi.object({
