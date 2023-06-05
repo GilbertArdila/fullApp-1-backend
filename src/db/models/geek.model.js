@@ -1,4 +1,5 @@
 const {Model,Sequelize,DataTypes} = require('sequelize');
+const {CATEGORY_TABLE} = require ('./category.model');
 
 const GEEK_TABLE = 'geeks';
 
@@ -33,8 +34,9 @@ const GeekSchema = {
   categoryId: {
     type: DataTypes.UUID,
     allowNull: false,
+    field:'category_id',
     references: {
-      model: 'categories',
+      model: CATEGORY_TABLE,
       key: 'id'
     },
     onUpdate:'CASCADE',
@@ -55,12 +57,7 @@ class Geek extends Model {
       sequelize,
       tableName: GEEK_TABLE,
       modelName: 'Geek',
-      timestamps: true,
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-      deletedAt: 'deleted_at',
-      paranoid: true,
-      underscored: true,
+      timestamps: false,
     }
   }
 }

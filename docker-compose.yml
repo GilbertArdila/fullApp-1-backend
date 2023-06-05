@@ -4,9 +4,9 @@ services:
   postgres:
     image: postgres:13
     environment:
-      - POSTGRES_DB=my_store
-      - POSTGRES_USER=gilbert
-      - POSTGRES_PASSWORD=0208
+      - POSTGRES_DB=newgeekstore
+      - POSTGRES_USER=usergeek
+      - POSTGRES_PASSWORD=usergeek123
     ports:
       - 5432:5432
     volumes:
@@ -14,7 +14,8 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      - PGADMIN_DEFAULT_EMAIL=gilbertferney@gmail.com
-      - PGADMIN_DEFAULT_PASSWORD=0208
+      - PGADMIN_DEFAULT_EMAIL=geeker@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=usergeek123
     ports:
       - 5050:80
+

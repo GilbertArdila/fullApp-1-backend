@@ -3,21 +3,21 @@ const {models} = require('../libs/sequelize');
 
 class CategoryService {
   constructor() {
-    this.model = models.Category;
+
   }
 
   async create(data) {
-    const category = await this.model.create(data);
+    const category = await models.Category.create(data);
     return category;
   }
 
   async find() {
-    const categories = await this.model.findAll();
+    const categories = await models.Category.findAll();
     return categories;
   }
 
   async findOne(id) {
-    const category = await this.model.findByPk(id);
+    const category = await models.Category.findByPk(id);
     if (!category) {
       throw boom.notFound('Category not found');
     }

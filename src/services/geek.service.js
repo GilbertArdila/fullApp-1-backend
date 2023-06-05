@@ -3,16 +3,16 @@ const {models} = require('../libs/sequelize');
 
 class GeekService {
   constructor() {
-    this.model = models.Geek;
+
   }
 
   async create(data) {
-    const geek = await this.model.create(data);
+    const geek = await models.Geek.create(data);
     return geek;
   }
 
   async update(id, changes) {
-    const geek = await this.model.findByPk(id);
+    const geek = await models.Geek.findByPk(id);
     if (!geek) {
       throw boom.notFound('Geek not found');
     }
@@ -21,21 +21,23 @@ class GeekService {
   }
 
   async delete(id) {
-    const geek = await this.model.findByPk(id);
+    const geek = await models.Geek.findByPk(id);
     if (!geek) {
       throw boom.notFound('Geek not found');
     }
     await geek.destroy();
-    return { id };
+    return id ;
   }
 
-  async findAll() {
-    const geeks = await this.model.findAll();
+  async find() {
+    const geeks = await models.Geek.findAll({
+      include: ['category'],
+    });
     return geeks;
   }
 
   async findOne(id) {
-    const geek = await this.model.findByPk(id);
+    const geek = await models.Geek.findByPk(id);
     if (!geek) {
       throw boom.notFound('Geek not found');
     }

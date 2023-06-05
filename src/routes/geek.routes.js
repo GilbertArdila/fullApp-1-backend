@@ -7,8 +7,8 @@ const service = new GeekService();
 
 router.get('/', async (req, res, next) => {
   try {
-    const geeks = await service.findAll();
-    res.json(geeks);
+    const geeks = await service.find();
+    res.status(200).json(geeks);
   } catch (error) {
     next(error);
   }
@@ -21,7 +21,7 @@ async (req, res, next) => {
   try {
     const { id } = req.params;
     const geek = await service.findOne(id);
-    res.json(geek);
+    res.status(200).json(geek);
   } catch (error) {
     next(error);
   }
@@ -49,7 +49,7 @@ async (req, res, next) => {
     const { id } = req.params;
     const body = req.body;
     const updated = await service.update(id, body);
-    res.json(updated);
+    res.status(201).json(updated);
   } catch (error) {
     next(error);
   }
@@ -63,7 +63,7 @@ async (req, res, next) => {
   try {
     const { id } = req.params;
     const deleted = await service.delete(id);
-    res.json(deleted);
+    res.status(204).json(deleted);
   } catch (error) {
     next(error);
   }

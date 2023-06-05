@@ -1,5 +1,7 @@
 const express =require('express');
 const cors = require('cors')
+const {errorHandler,boomErrorHandler,ormErrorHandler} = require('./src/middlewares/error.handler');
+
 const routerApi = require('./src/routes');
 const app = express();
 const port =process.env.PORT || 3000;
@@ -19,7 +21,10 @@ const options = {
 }
 app.use(cors(options));
 routerApi(app);
+app.use(ormErrorHandler);
+app.use(boomErrorHandler);
+app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log('port '+port);
+  console.log(`Example app listening at http://localhost:${port}`)
 });

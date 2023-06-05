@@ -214,7 +214,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-# postgreSQL
+# postgreSQL y pgadmin
 /postgres_data
+/pgadmin_data
 
 # End of https://www.toptal.com/developers
