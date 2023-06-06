@@ -28,6 +28,19 @@ async (req, res, next) => {
 }
 );
 
+router.get('/category/:categoryId',
+async (req, res, next) => {
+  try {
+    const { categoryId } = req.params;
+    const geeks = await service.findByCategory(categoryId);
+    res.status(200).json(geeks);
+  } catch (error) {
+    next(error);
+  }
+}
+);
+
+
 router.post('/',
  validationHandler(createGeekSchema,'body'),
  async (req, res, next) => {

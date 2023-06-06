@@ -43,5 +43,14 @@ class GeekService {
     }
     return geek;
   }
+
+  async findByCategory(categoryId) {
+    const geeks = await models.Geek.findAll({
+      where: {
+        categoryId,
+      },
+    });
+    return geeks;
+  }
 }
 module.exports = GeekService;
