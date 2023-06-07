@@ -9,7 +9,7 @@ const port =process.env.PORT || 3000;
 //para enviar información en formato json
 app.use(express.json());
 //cors
-const whiteList = ['http://localhost:8080','https://myFrontendApp.com'];
+const whiteList = ['http://localhost:8080','http://localhost:5173'];
 const options = {
   origin: (origin,callback) => {
      if(whiteList.includes(origin) || !origin){
