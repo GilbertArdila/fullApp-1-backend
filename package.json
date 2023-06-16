@@ -12,7 +12,12 @@
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all"
   },
-  "keywords": ["Geek store","Nodejs","Express","postgresql"],
+  "keywords": [
+    "Geek store",
+    "Nodejs",
+    "Express",
+    "postgresql"
+  ],
   "author": "Gilbert Ardila",
   "license": "MIT",
   "devDependencies": {
@@ -31,6 +36,8 @@
     "pg": "^8.9.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.28.0",
-    "sequelize-cli": "^6.6.0"
+    "sequelize-cli": "^6.6.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
   }
 }
