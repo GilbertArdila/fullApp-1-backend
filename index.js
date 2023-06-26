@@ -43,7 +43,7 @@ app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerJsDoc(swaggerSpec)));
 
 
 //cors
-const whiteList = ['http://localhost:8080','https://adminmodule.netlify.app','https://master--usermodule.netlify.app'];
+const whiteList = ['http://localhost:8080','http://localhost:5173','https://adminmodule.netlify.app','https://master--usermodule.netlify.app'];
 const options = {
   origin: (origin,callback) => {
      if(whiteList.includes(origin) || !origin){
