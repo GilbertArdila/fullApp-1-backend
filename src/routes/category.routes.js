@@ -50,7 +50,7 @@ router.get('/', async (req, res, next) => {
  *    - in: path
  *      name: id
  *      schema:
- *       type: integer
+ *       type: string
  *      required: true
  *      description: Id de la categoria
  *   responses:
@@ -145,7 +145,7 @@ async (req, res, next) => {
  *    - in: path
  *      name: id
  *      schema:
- *       type: integer
+ *       type: string
  *      required: true
  *      description: Id dela categoria
  *   responses:
@@ -187,7 +187,7 @@ async (req, res, next) => {
  *    - in: path
  *      name: id
  *      schema:
- *       type: integer
+ *       type: string
  *      required: true
  *      description: Id dela categoria
  *   responses:
