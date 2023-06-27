@@ -42,7 +42,7 @@ router.get('/', async (req, res, next) => {
 );
 /**
  * @swagger
- * api/v1/geeks/{id}:
+ * /api/v1/geeks/{id}:
  *  get:
  *   summary: Retorna un geek según su id
  *   tags: [Geeks]
