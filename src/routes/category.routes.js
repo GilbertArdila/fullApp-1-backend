@@ -42,7 +42,7 @@ router.get('/', async (req, res, next) => {
 );
 /**
  * @swagger
- * api/v1/categories/{id}:
+ * /api/v1/categories/{id}:
  *  get:
  *   summary: Retorna una categoria según su id
  *   tags: [Categories]
