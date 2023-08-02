@@ -42,7 +42,7 @@ router.get('/', async (req, res, next) => {
 );
 /**
  * @swagger
- * api/v1/geeks/{id}:
+ * /api/v1/geeks/{id}:
  *  get:
  *   summary: Retorna un geek según su id
  *   tags: [Geeks]
@@ -50,7 +50,7 @@ router.get('/', async (req, res, next) => {
  *    - in: path
  *      name: id
  *      schema:
- *       type: integer
+ *       type: string
  *      required: true
  *      description: Id del geek
  *   responses:
@@ -90,7 +90,7 @@ async (req, res, next) => {
  *    - in: path
  *      name: categoryId
  *      schema:
- *       type: integer
+ *       type: string
  *      required: true
  *      description: Id de la categoría
  *   responses:
@@ -211,7 +211,7 @@ router.post('/',
  *    - in: path
  *      name: id
  *      schema:
- *       type: integer
+ *       type: string
  *      required: true
  *      description: Id del producto
  *   responses:
@@ -253,7 +253,7 @@ async (req, res, next) => {
  *    - in: path
  *      name: id
  *      schema:
- *       type: integer
+ *       type: string
  *      required: true
  *      description: Id del geek
  *   responses:
